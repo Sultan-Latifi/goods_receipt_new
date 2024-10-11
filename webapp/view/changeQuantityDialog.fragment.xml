@@ -1,0 +1,158 @@
+
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<Dialog title="{Txz01} ({Matnr})" stretch="true" id="changeQuantityDialog">
+		<content>
+			<IconTabBar id="tabDialog" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter key="quantity" icon="sap-icon://number-sign">
+						<VBox height="10px"/>
+						<VBox>
+							<FlexBox width="100%" justifyContent="Center" alignItems="Center">
+								<FlexBox width="75%" justifyContent="Center" alignItems="Center">
+									<VBox>
+										<Table inset="false" id="tableMenge">
+											<columns>
+												<Column></Column>
+												<Column></Column>
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+														<Text text="{i18n>ordered}"/>
+														<ObjectNumber class="sapUiTinyMarginBottom" number="{path: 'Menge', type: 'sap.ui.model.type.Float', formatOptions: { showMeasure: true }}"
+															unit="{Meins}"/>
+													</cells>
+												</ColumnListItem>
+												<ColumnListItem>
+													<cells>
+														<Text text="{i18n>partiallyDelivered}"/>
+														<ObjectNumber class="sapUiTinyMarginBottom" number="{path: 'MengeH', type: 'sap.ui.model.type.Float', formatOptions: { showMeasure: true }}"
+															unit="{Meins}"/>
+													</cells>
+												</ColumnListItem>
+												<!--<ColumnListItem>-->
+												<!--	<cells>-->
+												<!--		<Text text="{i18n>deliveredQuant}"/>-->
+												<!--		<Input id="idMengeChange" change="onChangeMengeR" value="{MengeR}" description="{Meins}"/>-->
+												<!--	</cells>-->
+												<!--</ColumnListItem>-->
+												<ColumnListItem visible="{Isvbeln}">
+													<cells>
+														<Text text="{i18n>AvisLfimg}" visible="{Isvbeln}"/>
+														<ObjectNumber class="sapUiTinyMarginBottom" number="{path: 'Lfimg', type: 'sap.ui.model.type.Float', formatOptions: { showMeasure: true }}"
+															unit="{Meins}" visible="{Isvbeln}"/>
+													</cells>
+												</ColumnListItem>
+												<ColumnListItem>
+													<cells>
+														<Text text="{i18n>deliveredQuant}"/>
+														<Input id="idMengeChangeTes" change="onChangeMengeT"
+															value="{path: 'MengeT', type: 'sap.ui.model.type.Float', formatOptions: { showMeasure: true }}" description="{Meins}"/>
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
+										<CheckBox text="{i18n>closed}" selected="{Elikz}" visible="false" />
+										<!-- visible="{= ${Isvbeln} ? false : true }" 
+										<Label id="serialNumer" text="{= ${Serpf} === '1' ? ${i18n>DisplaySerialNumber} : ${i18n>enterSerialNumber}}" visible="{= ${Serpf} === '0' ? false : true }"/>
+											<Label id="serialNumerrer" text="{Sernr}"/>
+											<Label id="serialNumerrerer" text="{Serpf}"/> -->
+											<FlexBox visible="{= ${Serpf} === '0' ? false : true }">
+												<!--<Input id="iMenge" value="{path: 'Menget', formatOptions: { showMeasure: true }}" type="Tel" submit="SerialTabChange"/>-->
+												<InputListItem ariaLabelledBy="__xmlview0--label1 __xmlview0--label2" type="Navigation" label="Input List Item" id="item0" visible="false">
+													<content/>
+												</InputListItem>
+												<Table items="{SerialTab>/tableData}" visible="{= ${Serpf} === '0' ? false : true }">
+													<items>
+														<ColumnListItem  id="item1_1718012852796">
+														<!-- type="Active" -->
+															<cells>
+																<Input value="{SerialTab>input}" width="100%" editable="{= ${Serpf} === '2' ? true : false }" visible="{= ${Serpf} === '0' ? false : true }"/></cells>
+														</ColumnListItem>
+													</items>
+													<columns>
+														<Column >
+															<!--<header>-->
+															<!--	<Label text="Header 1" id="label0_1718012852796"/>-->
+															<!--</header>-->
+														</Column>
+													</columns>
+												</Table>
+											</FlexBox>
+									</VBox>
+								</FlexBox>
+							</FlexBox>
+						</VBox>
+					</IconTabFilter>
+					<IconTabFilter key="printquantity" id="tabFilterPrintQuantity" icon="sap-icon://print" visible="{Iszzetia}"> 
+						<VBox height="10px"/>
+						<VBox>
+							<FlexBox width="100%" justifyContent="Center" alignItems="Center">
+								<FlexBox width="75%" justifyContent="Center" alignItems="Center">
+									<VBox>
+										<Label text="{i18n>inputZzetia}"/>
+										<Input id="inputZzetia" value="{Zzetiat}" maxLength="10"/>											
+									</VBox>
+								</FlexBox>
+							</FlexBox>
+						</VBox>
+					</IconTabFilter>
+					<IconTabFilter key="bobine" id="tabFilterBobine" icon="sap-icon://bold-text">
+						<VBox class="sapUiSmallMargin">
+							<f:SimpleForm editable="false" layout="ResponsiveGridLayout" title="{i18n>reelCare}" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+								labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+								singleContainerFullSize="false">
+								<f:content>
+									<VBox>
+										<Label text="{i18n>cableReelInt}"/>
+										<Input id="iCableReel" maxLength="10"/>
+										<Label text="{i18n>batchExt}"/>
+										<Input id="ibatchExt" maxLength="15"/>
+										<Label text="{i18n>productioncode}"/>
+										<Input id="iProductioncode" maxLength="3"/>
+									</VBox>
+								</f:content>
+							</f:SimpleForm>
+						</VBox>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://print" visible="false">
+						<VBox class="sapUiSmallMargin">
+							<f:SimpleForm editable="false" layout="ResponsiveGridLayout" title="{i18n>labelPrint}" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+								labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+								singleContainerFullSize="false">
+								<f:content>
+									<VBox>
+										<Select id="selectLabel" selectedKey="{LabelName}">
+											<core:Item key="GROSS" text="Gross 200x100"/>
+											<core:Item key="MITTEL" text="Mittel 100x35"/>
+											<core:Item key="KLEIN" text="Klein 100x20"/>
+										</Select>
+										<Label text="Anzahl"/>
+										<Input id="labelCount" type="Tel" value="{LabelCount}" placeholder="#" change="onLabelCountChange"/>
+										<Label text="{i18n>consumptionDate}"/>
+										<FlexBox direction="Row">
+											<FlexBox direction="Column">
+												<Label text="{i18n>month}"/>
+												<Input id="iMonth" type="Tel" maxLength="2" placeholder="MM"/>
+											</FlexBox>
+											<FlexBox direction="Column">
+												<Label text="{i18n>year}"/>
+												<Input id="iYear" type="Tel" maxLength="4" placeholder="YYYY"/>
+											</FlexBox>
+										</FlexBox>
+									</VBox>
+								</f:content>
+							</f:SimpleForm>
+						</VBox>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+		<beginButton>
+			<Button text="{i18n>save}" press="onBtnSubmitDialogPress" type="Accept" width="100px"/>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>cancel}" press="onBtnCancelPress" type="Reject" width="100px"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

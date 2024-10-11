@@ -1,0 +1,14 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="com.mindsquare.gdmvt.receipt.controller.DetailInitial" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:semantic="sap.m.semantic" xmlns:f="sap.ui.layout.form">
+	<App>
+		<pages>
+			<semantic:DetailPage>
+				<semantic:content>
+					<MessagePage showHeader="false" text="{i18n>DetailInitialPageTitle}" description="{i18n>DetailInitialPageText}"
+						icon="sap-icon://message-warning"></MessagePage>
+				</semantic:content>
+			</semantic:DetailPage>
+		</pages>
+	</App>
+</mvc:View>

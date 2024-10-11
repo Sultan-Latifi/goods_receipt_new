@@ -1,0 +1,60 @@
+<mvc:View controllerName="com.mindsquare.gdmvt.receipt.controller.Master" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:semantic="sap.m.semantic" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form">
+	<semantic:MasterPage id="page" title="{masterView>/title}" navButtonPress="onNavBack" showNavButton="false">
+		<semantic:subHeader>
+			<Bar id="headerBar">
+				<contentLeft>
+					<SearchField id="searchField" showRefreshButton="{= !${device>/support/touch} }" tooltip="{i18n>masterSearchTooltip}" width="73%"
+						search="onSearch"></SearchField>
+					<!--liveChange="onLiveChange"-->
+					<Button width="25%" icon="sap-icon://bar-code" type="Emphasized" press="onBtnScanPress" />
+				</contentLeft>
+			</Bar>
+		</semantic:subHeader>
+		<semantic:content>
+			<PullToRefresh id="pullToRefresh" visible="{device>/support/touch}" refresh="onRefresh"/>
+			<!-- For client side filtering add this to the items attribute: parameters: {operationMode: 'Client'}}" -->
+			<List id="list" busyIndicatorDelay="{masterView>/delay}" noDataText="{masterView>/noDataText}"
+				mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}" growingScrollToLoad="true" growing="true"
+				updateFinished="onUpdateFinished" selectionChange="onSelectionChange" visible="false">
+				<!---->
+				<infoToolbar>
+					<Toolbar active="true" id="filterBar" visible="{masterView>/isFilterBarVisible}" press="onOpenViewSettings">
+						<Title id="filterBarLabel" text="{masterView>/filterBarLabel}"/>
+					</Toolbar>
+				</infoToolbar>
+				<items>
+					<ObjectListItem type="Navigation" press="onSelectionChange" intro="{Ebeln}" numberUnit="{Waers}" title="{Name1}">
+						<attributes>
+							<ObjectAttribute text="{Eknam}"/>
+						</attributes>
+						<firstStatus>
+							<ObjectStatus text="{Aedat}"/>
+							<ObjectStatus text="{Message} {Changed}"/>
+							<ObjectStatus text="{Status}" state="{ path: 'Status', formatter: 'sap.m.sample.ObjectListItem.Formatter.status' }"/>
+						</firstStatus>
+					</ObjectListItem>
+				</items>
+			</List>
+		</semantic:content>
+		<!--<semantic:filter>-->
+		<!--	<semantic:FilterSelect change="onSearch" items="{ path: 'masterView>/filters/filterTable', sorter: { path: 'description' } }"-->
+		<!--		selectedKey="{masterView>/filters/selectedKey}">-->
+		<!--onSemanticFilterChange-->
+		<!--		<core:Item key="{masterView>art}" text="{masterView>description}"/>-->
+		<!--	</semantic:FilterSelect>-->
+		<!--</semantic:filter>-->
+	</semantic:MasterPage>
+</mvc:View>
+<!--<form:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="4"
+				adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+				singleContainerFullSize="false" class="CustomSimpleform">
+				<form:content>
+					<Label text="{i18n>MasterPlant}"/>
+					<MultiComboBox id="filterWerks" selectionChange="onChangeMasterSelection" selectedKeys="{masterView>/ComboboxWerk/selectedKeys}">
+						<core:Item key="1100" text="Werk: 1100"/>
+						<core:Item key="0200" text="Werk: 0200"/>
+						<core:Item key="0500" text="Werk: 0500"/>
+					</MultiComboBox>
+				</form:content>
+			</form:SimpleForm>-->

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZLO_WM_GDMVT_RECEIPT_SRV" xml:lang="de" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="Orderheader" sap:content-version="1">
+				<Key><PropertyRef Name="Ebeln"/></Key><Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Einkaufsbeleg" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Lifnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Kreditor" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bsart" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Bestellart" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Aedat" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Geändert am" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ekgrp" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Einkäufergruppe"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Eknam" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Bezeichnung" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Netwr" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="Waers"
+					sap:label="Nettowert" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Waers" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Währung" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/><Property Name="Message" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="DD: Wahrheitswert" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PrintFlag" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="DD: Wahrheitswert" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Changed" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="DD: Wahrheitswert" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Filter" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Datenelement für Filter"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FilterItems" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Datenelement für Filter Items"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Lfsnr1" Type="Edm.String" Nullable="false" MaxLength="16" sap:unicode="false" sap:label="Lieferschein" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Buchungskreis" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CreaAfnamItems" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Datenelement für Filter"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Werk" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ReqName" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Vollst.Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Budat" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Buchungsdatum"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="HeaderText" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="HEADER_TEXT" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CustomParameter1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Custom Parameter 1"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CustomParameter2" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Custom Parameter 2"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CustomParameter3" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Custom Parameter 3"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CustomParameter4" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Custom Parameter 4"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CustomParameter5" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Custom Parameter 5"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CustomParameter6" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Custom Parameter 6"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CustomParameter7" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Custom Parameter 7"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CustomParameter8" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Custom Parameter 8"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CustomParameter9" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Custom Parameter 9"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CustomParameter10" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Custom Parameter 10"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="navHeaderItem" Relationship="ZLO_WM_GDMVT_RECEIPT_SRV.header_item" FromRole="FromRole_header_item"
+					ToRole="ToRole_header_item"/></EntityType>
+			<EntityType Name="Orderitem" sap:content-version="1">
+				<Key><PropertyRef Name="Ebeln"/><PropertyRef Name="Ebelp"/></Key><Property Name="Selected" Type="Edm.Boolean" Nullable="false" sap:unicode="false"
+					sap:label="boolsche Variable (X=true, -=false, space=unknown)" sap:creatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Einkaufsbeleg" sap:creatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Ebelp" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Position" sap:creatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Material" sap:creatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Charg" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Charge" sap:creatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Xchpf" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Chargenpfl" sap:creatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Meins" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Basis-ME" sap:creatable="false"
+					sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/><Property Name="Menge" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:unit="Meins"
+					sap:label="Bestellmenge" sap:creatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Txz01" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Kurztext" sap:creatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Ean11" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="EAN/UPC-Code" sap:creatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Brgew" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:unit="Gewei"
+					sap:label="Bruttogewicht" sap:creatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ntgew" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:unit="Gewei"
+					sap:label="Nettogewicht" sap:creatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Gewei" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Gewichtseinheit"
+					sap:creatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/><Property Name="MengeR" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:unit="Meins"
+					sap:label="Bestellmenge" sap:creatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MengeT" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:unit="Meins"
+					sap:label="Bestellmenge" sap:creatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MengeH" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:unit="Meins"
+					sap:label="Bestellmenge" sap:creatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Elikz" Type="Edm.Boolean" Nullable="false" sap:unicode="false"
+					sap:label="boolsche Variable (X=true, -=false, space=unknown)" sap:creatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Werk" sap:creatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Lgort" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Lagerort" sap:creatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Lgpbe" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Lagerplatz" sap:creatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Aufnr" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Auftrag" sap:creatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Auftext" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Bezeichnung" sap:creatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="LabelCount" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="LABEL_COUNT" sap:creatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Date" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="DATE" sap:creatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Printer" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Ausgabegerät"
+					sap:creatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LabelName" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Label Name"
+					sap:creatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="DoPrint" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="TRUE" sap:creatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="KztxtBatch" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Kurztext Charge"
+					sap:creatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Licha" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="LieferCharge" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CustomParameter1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Custom Parameter 1"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CustomParameter2" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Custom Parameter 2"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CustomParameter3" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Custom Parameter 3"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CustomParameter4" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Custom Parameter 4"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CustomParameter5" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Custom Parameter 5"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CustomParameter6" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Custom Parameter 6"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CustomParameter7" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Custom Parameter 7"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CustomParameter8" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Custom Parameter 8"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CustomParameter9" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Custom Parameter 9"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CustomParameter10" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Custom Parameter 10"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MaterialType" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Materialart"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Kostl" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Kostenstelle" sap:creatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Ktext" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Kostenstellenbezeichnung"
+					sap:creatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="PO_ATTACHMENT" sap:content-version="1">
+				<Key><PropertyRef Name="Ebeln"/></Key><Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Einkaufsbeleg" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Filename" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Dateiname" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Mimetype" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="BItem-Typ" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Content" Type="Edm.Binary" Nullable="false" sap:unicode="false" sap:label="CONTENT" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<Association Name="header_item" sap:content-version="1"><End Type="ZLO_WM_GDMVT_RECEIPT_SRV.Orderheader" Multiplicity="1" Role="FromRole_header_item"/><End Type="ZLO_WM_GDMVT_RECEIPT_SRV.Orderitem" Multiplicity="*" Role="ToRole_header_item"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_header_item"><PropertyRef Name="Ebeln"/></Principal>
+					<Dependent Role="ToRole_header_item"><PropertyRef Name="Ebeln"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZLO_WM_GDMVT_RECEIPT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="OrderheaderSet" EntityType="ZLO_WM_GDMVT_RECEIPT_SRV.Orderheader" sap:creatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="OrderitemSet" EntityType="ZLO_WM_GDMVT_RECEIPT_SRV.Orderitem" sap:creatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="PO_ATTACHMENTSet" EntityType="ZLO_WM_GDMVT_RECEIPT_SRV.PO_ATTACHMENT" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<AssociationSet Name="header_itemSet" Association="ZLO_WM_GDMVT_RECEIPT_SRV.header_item" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="OrderheaderSet" Role="FromRole_header_item"/><End EntitySet="OrderitemSet" Role="ToRole_header_item"/></AssociationSet>
+			</EntityContainer><atom:link rel="self"
+				href="https://webidecp-a50aa702d.dispatcher.hana.ondemand.com/destinations/MI7/sap/opu/odata/sap/ZLO_WM_GDMVT_RECEIPT_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version"
+				href="https://webidecp-a50aa702d.dispatcher.hana.ondemand.com/destinations/MI7/sap/opu/odata/sap/ZLO_WM_GDMVT_RECEIPT_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

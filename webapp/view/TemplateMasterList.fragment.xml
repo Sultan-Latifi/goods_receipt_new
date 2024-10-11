@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ObjectListItem type="Navigation" press="onSelectionChange" intro="{Ebeln}" numberUnit="{Waers}" title="{Name1}">
+		<attributes>
+			<ObjectAttribute text="{Eknam}"/>
+		</attributes>
+		<firstStatus>
+			<ObjectStatus text="{Aedat}"/>
+			<ObjectStatus text="{Message} {Changed}"/>
+			<ObjectStatus text="{Status}" state="{ path: 'Status', formatter: 'sap.m.sample.ObjectListItem.Formatter.status' }"/>
+		</firstStatus>
+	</ObjectListItem>
+</core:FragmentDefinition>

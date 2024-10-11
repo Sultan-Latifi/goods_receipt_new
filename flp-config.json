@@ -1,0 +1,34 @@
+{
+    "application": {
+        "id": "",
+        "title": "com.mindsquare.gdmvt.receipt.mm_goods_receipt",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/",
+        "appUrl": "#mm_goods_receipt-Display",
+        "navigationComponentName": "com.mindsquare.gdmvt.receipt",
+        "intentSemanticObject": "mm_goods_receipt",
+        "intentAction": "Display",
+        "html5ApplicationName": "mmgoodsreceipt",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "235f5f96-a965-4979-8341-503fe5654a66-1588174218302"
+        ],
+        "contentPackages": [
+            "5875d4f3-7018-4215-8980-f826f594df52-1588173608044"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "Wareneingang",
+        "subtitle": "Bestellung",
+        "searchKeywords": "Wareneingang,Bestellung",
+        "displayIconUrl": "sap-icon://cart-5",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}

@@ -1,0 +1,24 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns="sap.m">
+	<Dialog stretch="{device>/system/phone}" title="{i18n>Filter}">
+		<endButton>
+			<Button press="onFilterDialogClose" text="OK"/>
+		</endButton>
+		<l:Grid defaultSpan="L12 M12 S12">
+			<l:content>
+				<VBox width="100%">
+					<RadioButton id="orderID" select="onFilterSelect" groupName="GroupA" text="{i18n>OrderId}"/>
+					<RadioButton id="materialNr" select="onFilterSelect" groupName="GroupA" text="{i18n>MaterialNr}"/>
+					<RadioButton id="materialText" select="onFilterSelect" groupName="GroupA" text="{i18n>Materialtext}"/>
+					<RadioButton id="deliveryDate" select="onFilterSelect" groupName="GroupA" text="{i18n>DeliveryDate}"/>
+					<RadioButton id="supplierNo" select="onFilterSelect" groupName="GroupA" text="{i18n>SupplierNr}"/>
+					<RadioButton id="supplierName" select="onFilterSelect" groupName="GroupA" text="{i18n>SupplierName}"/>
+					<RadioButton id="all" select="onFilterSelect" groupName="GroupA" selected="true" text="{i18n>all}"/>
+				</VBox>
+				<VBox width="100%">
+						<CheckBox id="allOrders" select="onFilterSelect" text="{i18n>AllOrders}" selected="true"/>
+						<CheckBox id="closedOrders" select="onFilterSelect" text="{i18n>ClosedOrders}"/>
+				</VBox>
+			</l:content>
+		</l:Grid>
+	</Dialog>
+</core:FragmentDefinition>

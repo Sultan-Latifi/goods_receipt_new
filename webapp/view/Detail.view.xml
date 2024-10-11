@@ -1,0 +1,108 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	controllerName="com.mindsquare.gdmvt.receipt.controller.Detail" xmlns:u="sap.ui.unified" xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<semantic:DetailPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}"
+		title="{= ${Isvbeln} ? ${i18n>delivery} : ${i18n>order}} {Ebeln}" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}"
+		class="sapUiNoContentPadding">
+		<semantic:content>
+			<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="5"
+				adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+				singleContainerFullSize="false">
+				<Label text="{i18n>lfsnr1}" required="true"/>
+				<Input id="Lfsnr1Input" value="{Lfsnr1}"/>
+				<!--editable="{= ${Lfsnr1} ? false : true }"-->
+				<Label vAlign="Middle" text="{i18n>budat}"/>
+				<DatePicker dateValue="{Budat}"/>
+			</f:SimpleForm>
+			<Panel expandable="true" expanded="false" headerText="{i18n>info}" width="auto" class="sapUiResponsiveMargin">
+				<content>
+					<VBox>
+						<f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="5"
+							adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+							singleContainerFullSize="false">
+							<f:content>
+								<Label text="{i18n>document}"/>
+								<Text text="{Ebeln}"/>
+								<Label text="{i18n>creditor}"/>
+								<Text text="{Name1}, {Lifnr}"/>
+								<Label text="{i18n>docCat}"/>
+								<Text text="{Bsart}" visible="{= ${Bsart} ? true : false }"/>
+								<!--<Label text="{i18n>purchGroup}" visible="{= ${Eknam} ? true : false }"/>-->
+								<Label text="{i18n>purchGroup}"/>
+								<Text text="{Eknam}, {Ekgrp}" visible="{= ${Eknam} ? true : false }"/>
+								<!--<Label text="{i18n>purchGroup}" visible="{= ${Eknam} ? false : true }"/>-->
+								<Label text="{i18n>purchGroup}"/>
+								<Text text="{Ekgrp}" visible="{= ${Eknam} ? false : ${Ekgrp} ? true : false }"/>
+								<!--<Text text=", {Ekgrp}" visible="{= ${Eknam} ? false : true }"/>-->
+								<Label text="{i18n>createdOn}"/>
+								<Text text="{path : 'Aedat', type : 'sap.ui.model.type.Date', formatOptions: { style : 'medium'}}" visible="{= ${Aedat} ? true : false }"/>
+								<Label text="{i18n>bukrs}"/>
+								<Text text="{Bukrs}" visible="{= ${Bukrs} ? true : false }"/>
+								<Label text="{i18n>anforderer}"/>
+								<Text text="{ReqName}" visible="{= ${ReqName} ? true : false }"/>
+							</f:content>
+						</f:SimpleForm>
+					</VBox>
+				</content>
+			</Panel>
+			<Panel expandable="true" expanded="false" headerText="{i18n>attachmentsHeader}" width="auto" class="sapUiResponsiveMargin">
+				<VBox>
+					<l:Grid defaultSpan="XL6 L6 M6 S12" class="itemDisplay" width="100%">
+						<VBox>
+							<l:VerticalLayout >
+								<!-- <u:FileUploader id="fileUploader" class="sapUiSmallMarginBegin sapUiSmallMarginEnd changeWidthPage" value="" useMultipart="false"
+									name="myFileUpload" uploadUrl="upload/" change="handleUploadPress" tooltip="Upload your file to the local server"
+									uploadComplete="handleUploadComplete"/> -->
+									<u:FileUploader id="fileUploader" class="sapUiSmallMarginBegin sapUiSmallMarginEnd changeWidthPage" value="" useMultipart="false"
+										name="myFileUpload" uploadUrl="upload/" change="handleUploadPress" tooltip="Upload your file to the local server"
+										uploadComplete="handleUploadComplete">
+										<!-- <customData>
+										<core:CustomData key="accept" value="image/*" writeToDom="true"/>
+										<core:CustomData key="capture" value="camera" writeToDom="true"/>
+										</customData> -->
+									</u:FileUploader>
+								<!--<HBox>-->
+								<!--	<Button text="Attach File" press="handleUploadPress" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>-->
+								<!--<Button text="{i18n>takePhoto}" press="handlePhoto" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>-->
+								<!--</HBox>-->
+							</l:VerticalLayout>
+							<List id="itemlist" class="sapUiSmallMarginBegin sapUiSmallMarginEnd " mode="Delete" delete=".deleteRow" items="{ path : 'imagesData>/' }">
+								<CustomListItem>
+									<Input value="{imagesData>name}"/>
+								</CustomListItem>
+							</List>
+							<!--<Button text="Upload Files" id="uploadButton" press="onUploadFiles" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>-->
+						</VBox>
+					</l:Grid>
+					<VBox id="imageTake" width="100%"></VBox>
+				</VBox>
+			</Panel>
+			<!--<u:FileUploader id="fileUploader" class="sapUiSmallMarginBegin sapUiSmallMarginEnd changeWidthPage" value="" useMultipart="false"-->
+			<!--	name="myFileUpload" uploadUrl="upload/" change="handleUploadPress" tooltip="Upload your file to the local server"-->
+			<!--	uploadComplete="handleUploadComplete"/>-->
+			<!--<VBox id="imageTake" width="100%"></VBox>-->
+			<Panel expandable="false" expanded="true" width="auto" class="sapUiNoContentPadding">
+				<List id="postionList" mode="MultiSelect" items="{path: 'navHeaderItem', factory: '.itemFactory'}" updateFinished=".onPOItemUpdateFinished"></List>
+			</Panel>
+			<Dialog showHeader="true" title="{i18n>bookingDailog}" id="bookingDialog" verticalScrolling="false">
+				<content>
+					<!-- <CheckBox text="{i18n>printDocument}" selected="true" id="PrintFlag"/> -->
+					<Text text="{i18n>yousure}"/>
+				</content>
+				<beginButton>
+					<Button text="{i18n>cancel}" icon="sap-icon://sys-cancel" type="Reject" data:id="bookingDialog" press="onDialog"/>
+				</beginButton>
+				<endButton>
+					<Button text="{i18n>post}" icon="sap-icon://save" type="Accept" press="onBtnSubmitReceipPressNew"/>
+				</endButton>
+			</Dialog>
+		</semantic:content>
+		<semantic:positiveAction>
+		<semantic:PositiveAction id="btnPost" text="{i18n>post}" class="sapUiLargeMargins" data:id="bookingDialog"
+						press="onDialog" />
+			<!-- <semantic:PositiveAction text="{i18n>postReceipt}" press="onBtnSubmitReceipPressNew" icon="sap-icon://receipt"/> -->
+			<!--<semantic:Action text="{i18n>postReceipt}" press="callAttach" icon="sap-icon://receipt"/>-->
+			<!--press="onBtnSubmitReceipPressNew"
+			press="callAttach"-->
+		</semantic:positiveAction>
+	</semantic:DetailPage>
+</mvc:View>

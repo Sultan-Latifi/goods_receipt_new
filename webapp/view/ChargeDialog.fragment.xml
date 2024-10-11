@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout">
+	<Dialog title="{i18n>ChargeAnlegen}" stretch="{device>/system/phone}">
+		<beginButton>
+			<Button text="{i18n>Speichern}" press="onChargeDialogSave"></Button>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>Abbrechen}" press="onChargeDialogClose"></Button>
+		</endButton>
+		<l:Grid defaultSpan="L6 M6 S12">
+			<l:content>
+				<Label text="{MaterialNrMaterialNr}" />
+				<Label text="{MaterialNr}" />
+				<Label text="{i18n>Charge}" />
+				<Label text="{ChargeID}" />
+				<DatePicker
+					id="manufacturingDateDatePicker"
+					placeholder="{i18n>ManufacturingDate}"
+					displayFormat="medium"
+					dateValue="{ManufacturingDate}">	
+					<layoutData>
+						<l:GridData
+							span="L12 M12 S12">
+						</l:GridData>
+					</layoutData><!-- sap.ui.core.LayoutData -->
+				</DatePicker>
+				<DatePicker
+					id="durabilityDateDatePicker"
+					placeholder="{i18n>MHD}"
+					displayFormat="medium"
+					dateValue="{DurabilityDate}">
+					<layoutData>
+						<l:GridData
+							span="L12 M12 S12">
+						</l:GridData>
+					</layoutData><!-- sap.ui.core.LayoutData -->
+				</DatePicker>
+			</l:content>
+		</l:Grid>
+	</Dialog>
+</core:FragmentDefinition>

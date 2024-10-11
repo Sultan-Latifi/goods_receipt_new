@@ -1,0 +1,9 @@
+.CustomSimpleform > div > div > div {
+	padding: 0rem 0rem !important;
+}
+
+.boldCustomObjectAttribute>.sapMText{
+    background: red !important;
+    font-weight: bold !important;
+    color: black !important;
+}

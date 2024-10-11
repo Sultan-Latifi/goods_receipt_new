@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns="sap.m">
+	<ViewSettingsDialog confirm="onConfirmPress">
+		<sortItems>
+			<ViewSettingsItem key="OrderID" selected="true" text="{i18n>OrderId}"/>
+			<ViewSettingsItem key="MaterialNr" text="{i18n>MaterialNr}"/>
+			<ViewSettingsItem key="DeliveryDateSort" text="{i18n>DeliveryDate}"/>
+			<ViewSettingsItem key="MaterialText" text="{i18n>MaterialText}"/>
+			<ViewSettingsItem key="SupplierNo" text="{i18n>Supplier}"/>
+			<ViewSettingsItem key="SupplierName" text="{i18n>SupplierName}"/>	
+			<ViewSettingsItem key="QuantityOpen" text="{i18n>Open}"/>
+		</sortItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

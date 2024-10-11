@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout">
+	<CustomListItem type="Detail" detailPress="onDetailPress" selected="{Selected}" class="sapUiSmallMarginTopBottom">
+		<FlexBox direction="Row" justifyContent="SpaceBetween">
+			<FlexBox direction="Column">
+				<ObjectAttribute text="{Ebelp} | {Lgpbe}"/>
+				<FlexBox direction="Row" visible="{= ${Aufnr} !== ''}">
+					<ObjectAttribute title="{i18n>auftrag}" class="sapUiTinyMarginEnd"/>
+					<FlexBox direction="Column">
+						<Text text="{Aufnr}"/>
+						<Text text="{Auftext}" wrapping="true"/>
+					</FlexBox>
+				</FlexBox>
+				<FlexBox direction="Row" visible="{= ${CustomParameter1} !== ''}">
+					<ObjectAttribute text="{i18n>qPruef}" class="boldCustomObjectAttribute"/>
+				</FlexBox>
+				<ObjectIdentifier title="{Matnr} {Txz01}" class="sapUiTinyMarginTopBottom"/>
+				<FlexBox direction="Column">
+					<ObjectAttribute title="{i18n>ordered}"/>
+					<ObjectNumber number="{path: 'Menge', type: 'sap.ui.model.type.Float', formatOptions: { showMeasure: true }}" unit="{Meins}"/>
+					<ObjectAttribute title="{i18n>partiallyDelivered}"/>
+					<ObjectNumber number="{path: 'MengeH', type: 'sap.ui.model.type.Float', formatOptions: { showMeasure: true }}" unit="{Meins}"/>
+					<ObjectAttribute title="{i18n>AvisLfimg}" visible="{Isvbeln}"/>
+					<ObjectNumber number="{path: 'Lfimg', type: 'sap.ui.model.type.Float', formatOptions: { showMeasure: true }}" unit="{Meins}" visible="{Isvbeln}"/>
+					<ObjectAttribute title="{i18n>deliveredQuant}"/>
+					<ObjectNumber number="{path: 'MengeR', type: 'sap.ui.model.type.Float', formatOptions: { showMeasure: true }}" unit="{Meins}"/>
+				</FlexBox>
+			</FlexBox>
+			<FlexBox direction="Column" >
+				<ObjectAttribute title="{i18n>kostl}" visible="{= ${Kostl} !== ''}"/>
+				<Text text="{Ktext} - {Kostl}" visible="{= ${Kostl} !== ''}"/>
+				<!-- <ObjectAttribute title="{i18n>vgbel}" visible="{= ${Vgbel} !== ''}"/> -->
+				<Text text="{i18n>vgbel}: {Vgbel}" visible="{= ${Vgbel} !== ''}"/>
+			</FlexBox>
+		</FlexBox>
+	</CustomListItem>
+</core:FragmentDefinition>
+<!-- selected="{Selected}" -->
+<!-- , type: 'sap.ui.model.type.Float' -->
+<!-- , formatOptions: { showMeasure: true } -->
+<!--visible="{= ${Aufnr} !== ''}"-->
